@@ -8,7 +8,7 @@ export default function Home() {
           src="/maharishi.png"
           alt="Vethathiri Maharishi"
           className="absolute left-1/2 -translate-x-1/2 bottom-[180px] md:bottom-[220px] 
-               w-64 md:w-96 z-10"
+               w-64 md:w-96 z-10 animate-[divineGlow_4s_ease-in-out_infinite]"
         />
 
         {/* Mandram – anchored to ground */}

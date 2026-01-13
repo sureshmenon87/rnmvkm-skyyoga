@@ -29,3 +29,15 @@ body {
   background-color: #f4edc9; /* same cream color */
   min-height: 100%;
 }
+
+@keyframes divineGlow {
+  0% {
+    filter: drop-shadow(0 0 8px rgba(255, 215, 120, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgba(255, 215, 120, 0.7));
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(255, 215, 120, 0.4));
+  }
+}
