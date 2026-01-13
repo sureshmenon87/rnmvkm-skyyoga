@@ -24,10 +24,61 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className="min-h-screen flex flex-col bg-[#f4edc9] text-gray-900">
+        <header className="bg-[#f4edc9] border-b border-gray-300">
+          {/* Row 1 */}
+          <div className="relative max-w-7xl mx-auto px-4 py-6">
+            {/* Top slogans */}
+            <div className="absolute left-4 top-2 text-sm text-blue-700 font-semibold">
+              வாழ்க வையகம்
+            </div>
+            <div className="absolute right-4 top-2 text-sm text-blue-700 font-semibold">
+              வாழ்க வளமுடன்
+            </div>
+
+            {/* Center text (true center) */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+              <h1 className="font-extrabold text-green-700 text-lg md:text-xl whitespace-nowrap">
+                குரு வேதாத்திரி மகரிஷி அவர்களின் அருளாசியுடன்
+              </h1>
+
+              <h2 className="font-extrabold text-blue-800 text-base md:text-lg mt-1 whitespace-nowrap">
+                குரோம்பேட்டை ராதா நகர் மனவளக்கலை மன்றம் அறக்கட்டளை
+              </h2>
+
+              <p className="text-sm mt-1 text-blue-700">
+                7, 6வது தெரு, ராதா நகர், குரோம்பேட்டை, சென்னை – 600 044.
+              </p>
+            </div>
+
+            {/* Logos */}
+            <div className="flex justify-between items-center">
+              <img src="/logo-wcsc.png" alt="WCSC SKY" className="h-28" />
+              <img src="/logo-skyyoga.png" alt="SKY Yoga" className="h-28" />
+            </div>
+          </div>
+
+          {/* Row 2 – Menu */}
+          <div className="bg-[#f4edc9] border-t border-gray-300">
+            <div className="max-w-7xl mx-auto px-4 py-2 flex justify-center gap-8 text-blue-700 font-semibold">
+              <a href="/learn" className="hover:underline">
+                பயிற்சிகள்
+              </a>
+              <a href="/learn" className="hover:underline">
+                தியானம் செய்முறை
+              </a>
+              <a href="/events" className="hover:underline">
+                நிகழ்வுகள்
+              </a>
+            </div>
+          </div>
+        </header>
+
+        <main className="flex-1">{children}</main>
+
+        <footer className="bg-[#0b3b5c] text-white text-center py-3 text-xs">
+          © 2026 ராதாநகர் SKY யோக மன்றம்
+        </footer>
       </body>
     </html>
   );
