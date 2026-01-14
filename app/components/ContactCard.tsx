@@ -13,8 +13,20 @@ type ContactCardProps = {
 export default function ContactCard({ header, items }: ContactCardProps) {
   return (
     <div
-      className="bg-[#7b1c0d] text-white rounded-2xl w-full md:w-[260px] min-h-[220px] py-6 px-4
-                    flex flex-col items-center shadow-xl"
+      className=" bg-[#7b1c0d]
+    text-white
+    rounded-2xl
+    w-full
+    max-w-[280px]
+    md:max-w-[260px]
+    min-h-[220px]
+    py-6
+    px-4
+    shadow-xl
+    transition
+    duration-300
+    hover:scale-[1.03]
+    hover:shadow-2xl"
     >
       {header && (
         <p className="text-sm font-semibold mb-3 text-[#ffe9b3] tracking-wide">

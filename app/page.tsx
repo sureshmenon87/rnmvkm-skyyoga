@@ -76,7 +76,7 @@ export default function Home() {
           src="/dome.png"
           alt="Radha Nagar SKY Mandram"
           className="absolute left-1/2 -translate-x-1/2 bottom-0 
-               w-[70%] md:w-[50%] max-w-[900px] z-20"
+               w-[70%] md:w-[50%] max-w-[900px] z-20 "
           style={{ aspectRatio: "896 / 525" }}
         />
       </section>
@@ -106,15 +106,23 @@ export default function Home() {
         />
       </div>
       {/* Contact Cards */}
-      <section className="mt-10 mb-24 flex flex-col md:flex-row justify-center gap-20 px-6">
-        {/* Card 1 */}
-
-        <ContactCard items={contactsCard1} />
-
-        {/* Card 2 */}
-        <ContactCard items={contactsCard2} />
-        {/* Card 3 */}
-        <ContactCard items={contactsCard3} />
+      <section className="mt-10 mb-24 px-6">
+        <div
+          className="
+      mx-auto
+      max-w-[900px]       
+      grid
+      grid-cols-1
+      md:grid-cols-2
+      lg:grid-cols-3
+      gap-6 md:gap-8
+      justify-items-center
+    "
+        >
+          <ContactCard items={contactsCard1} />
+          <ContactCard items={contactsCard2} />
+          <ContactCard items={contactsCard3} />
+        </div>
       </section>
     </div>
   );

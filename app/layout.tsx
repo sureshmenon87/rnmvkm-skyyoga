@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NavMenu from "./components/NavMenu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -69,7 +70,7 @@ export default function RootLayout({
               </p>
 
               <p className="text-xs md:text-sm text-[#1f3b6d] ">
-                <span>📞 9884374090, 9962206217</span>
+                <span>📞 9884374090, 9962206217 &nbsp;</span>
                 <span>✉️ skychrompet@yahoo.com</span>
               </p>
             </div>
@@ -86,27 +87,7 @@ export default function RootLayout({
           </div>
 
           {/* Navigation */}
-          <nav className="mt-2">
-            <div
-              className="flex justify-center gap-6 md:gap-10
-                    text-sm md:text-base font-semibold text-[#1f3b6d]"
-            >
-              <a className="hover:text-[#0f6b3a] transition">பயிற்சிகள்</a>
-              <a className="hover:text-[#0f6b3a] transition">
-                தியானம் செய்முறை
-              </a>
-              <a className="hover:text-[#0f6b3a] transition">நிகழ்வுகள்</a>
-            </div>
-
-            {/* Decorative divider */}
-            <div className="flex justify-center mt-2 mb-3">
-              <img
-                src="/divider.png"
-                alt="divider"
-                className="w-[160px] md:w-[240px] opacity-70"
-              />
-            </div>
-          </nav>
+          <NavMenu />
         </header>
 
         <main className="flex-1">{children}</main>
