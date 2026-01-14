@@ -1,60 +1,64 @@
+import ContactCard from "./components/ContactCard";
 import Divider from "./components/Divider";
 
 export default function Home() {
   const contactsCard1 = [
     {
-      name: "உமையாள்புரம் அறிவுத் திருக்கோவில்",
+      title: "உமையாள்புரம் அறிவுத் திருக்கோவில்",
       phone: " 9677232354, 9176902545",
     },
     {
-      name: "M.G. நகர் தவமயம்",
+      title: "M.G. நகர் தவமயம்",
       phone: "9791007520, 9444630594",
     },
     {
-      name: "விஸ்வநாதன் தெரு தவமயம்",
+      title: "விஸ்வநாதன் தெரு தவமயம்",
       phone: "9962435097, 9841640623",
     },
     {
-      name: "A.K. நகர் தவமயம்",
+      title: "A.K. நகர் தவமயம்",
       phone: "9080897951, 9444898982",
     },
   ];
   const contactsCard2 = [
     {
-      name: "வேதகிரி தெரு தவமயம்",
+      title: "வேதகிரி தெரு தவமயம்",
       phone: "9444754471, 6381708206",
     },
     {
-      name: "ஸ்டேசன் ரோடு தவமயம்",
+      title: "ஸ்டேசன் ரோடு தவமயம்",
       phone: "9865377374",
     },
     {
-      name: "தாம்பரம் மாநகர் அறிவுத் திருக்கோவில்",
+      title: "தாம்பரம் மாநகர் அறிவுத் திருக்கோவில்",
       phone: "9884380823, 7397480619",
     },
     {
-      name: "திருமுருகன் தெரு தவமயம்",
+      title: "திருமுருகன் தெரு தவமயம்",
       phone: "9444261409, 8903853154",
     },
   ];
   const contactsCard3 = [
     {
-      name: "தென்றல் நகர் தவமயம்",
+      title: "தென்றல் நகர் தவமயம்",
       phone: "9840242267, 9962341133",
     },
     {
-      name: "வ.உ.சி. தெரு தவமயம்",
+      title: "வ.உ.சி. தெரு தவமயம்",
       phone: "9444306556",
     },
     {
-      name: "கண்டிகை தவமயம்",
+      title: "கண்டிகை தவமயம்",
       phone: "9080458416",
     },
     {
-      name: "மூவரசம்பட்டு தவமயம்",
+      title: "மூவரசம்பட்டு தவமயம்",
       phone: "7397265107, 8072226463",
     },
   ];
+
+  const blessingQuote = `நீங்களும் உங்கள் அன்புக் குடும்பமும் அருட்பேராற்றல் கருணையினால் உடல் நலம், நீள் ஆயுள்,
+நிறை செல்வம், உயர் புகழ், மெய்ஞ்ஞானம் ஓங்கி வாழ்க வளமுடன்`;
   return (
     <div className="bg-[#f4edc9] ">
       {/* Maharishi & Mandram */}
@@ -83,8 +87,7 @@ export default function Home() {
         </p>
 
         <p className="mt-4 text-[#7b1c0d] text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-          நீங்களும் உங்கள் அன்புக் குடும்பமும் அருட்பொருளால் கருணையினால் உடல்
-          நலம், நலன்வளம், உயர்பதவி, மென்மையான ஒங்கி வாழ்க வளமுடன்.
+          {blessingQuote}
         </p>
       </div>
 
@@ -105,39 +108,13 @@ export default function Home() {
       {/* Contact Cards */}
       <section className="mt-10 mb-24 flex flex-col md:flex-row justify-center gap-20 px-6">
         {/* Card 1 */}
-        <div className="bg-[#7b1c0d] text-white rounded-2xl w-full md:w-[260px] min-h-[220px] py-6 flex flex-col justify-start items-center shadow-xl">
-          {contactsCard1.map((item, index) => (
-            <div key={item.name} className="text-center">
-              <p className="text-sm font-semibold">{item.name}</p>
-              <p className="mt-2 text-sm">📞 {item.phone}</p>
 
-              {index !== contactsCard1.length - 1 && <Divider />}
-            </div>
-          ))}
-        </div>
+        <ContactCard items={contactsCard1} />
 
         {/* Card 2 */}
-        <div className="bg-[#7b1c0d] text-white rounded-2xl w-full md:w-[260px] min-h-[220px] py-6 flex flex-col justify-start items-center shadow-xl">
-          {contactsCard2.map((item, index) => (
-            <div key={item.name} className="text-center">
-              <p className="text-sm font-semibold">{item.name}</p>
-              <p className="mt-2 text-sm">📞 {item.phone}</p>
-
-              {index !== contactsCard1.length - 1 && <Divider />}
-            </div>
-          ))}
-        </div>
+        <ContactCard items={contactsCard2} />
         {/* Card 3 */}
-        <div className="bg-[#7b1c0d] text-white rounded-2xl w-full md:w-[260px] min-h-[220px] py-6 flex flex-col justify-start items-center shadow-xl">
-          {contactsCard3.map((item, index) => (
-            <div key={item.name} className="text-center">
-              <p className="text-sm font-semibold">{item.name}</p>
-              <p className="mt-2 text-sm">📞 {item.phone}</p>
-
-              {index !== contactsCard1.length - 1 && <Divider />}
-            </div>
-          ))}
-        </div>
+        <ContactCard items={contactsCard3} />
       </section>
     </div>
   );
