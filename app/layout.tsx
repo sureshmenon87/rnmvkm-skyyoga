@@ -92,6 +92,16 @@ export default function RootLayout({
         </div>
 
         <main className="flex-1">{children}</main>
+        {/* Bottom vignette */}
+        <div className="relative w-full h-56 pointer-events-none">
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to top, rgba(0,0,0,0.22), rgba(0,0,0,0.08), transparent)",
+            }}
+          />
+        </div>
 
         <footer className="bg-[#0b3b5c] text-white text-center py-3 text-xs">
           © 2026 ராதா நகர் SKY யோக மன்றம் இது அதிகாரப்பூர்வ இணையதளம் அல்ல. தகவல்

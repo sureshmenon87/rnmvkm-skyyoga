@@ -68,7 +68,8 @@ export default function Home() {
           src="/maharishi.png"
           alt="Vethathiri Maharishi"
           className="absolute left-1/2 -translate-x-1/2 bottom-[100px] md:bottom-[220px] 
-               w-64 md:w-96 z-10 animate-[divineGlow_4s_ease-in-out_infinite]"
+               w-64 md:w-96 z-10 animate-[divineGlow_4s_ease-in-out_infinite] filter
+    drop-shadow-[0_6px_20px_rgba(0,0,0,0.18)"
         />
 
         {/* Mandram – anchored to ground */}
@@ -76,7 +77,7 @@ export default function Home() {
           src="/dome.png"
           alt="Radha Nagar SKY Mandram"
           className="absolute left-1/2 -translate-x-1/2 bottom-0 
-               w-[70%] md:w-[50%] max-w-[900px] z-20 "
+               w-[70%] md:w-[50%] max-w-[900px] z-20  drop-shadow-[0_10px_25px_rgba(0,0,0,0.25)] rounded bg-[radial-gradient(circle_at_center,rgba(255,215,140,0.45),rgba(255,215,140,0.15),transparent_70%)] blur-1xl"
           style={{ aspectRatio: "896 / 525" }}
         />
       </section>
@@ -92,6 +93,7 @@ export default function Home() {
       </div>
 
       {/* Decorative divider */}
+
       <div className="flex justify-center my-10">
         <img
           src="/divider.png"
