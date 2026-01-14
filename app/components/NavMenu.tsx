@@ -13,10 +13,11 @@ export default function NavMenu() {
   const pathname = usePathname();
 
   return (
-    <nav className="mt-2">
+    <nav className="py-2">
       <div
         className="
-          flex justify-center gap-6 md:gap-10
+          flex flex-col items-center gap-3
+          md:flex-row md:justify-center md:gap-10
           text-sm md:text-base
           font-semibold
         "
@@ -31,6 +32,8 @@ export default function NavMenu() {
               className={`
                 cursor-pointer
                 transition-all duration-200
+                px-2 py-1
+                
                 ${
                   isActive
                     ? "text-[#7b1c0d] font-bold"
@@ -45,11 +48,11 @@ export default function NavMenu() {
       </div>
 
       {/* Decorative divider */}
-      <div className="flex justify-center mt-2 mb-3">
+      <div className="flex justify-center mt-3 mb-4">
         <img
           src="/divider.png"
           alt="divider"
-          className="w-[160px] md:w-[240px] opacity-80"
+          className="w-[140px] md:w-[240px] opacity-80"
         />
       </div>
     </nav>

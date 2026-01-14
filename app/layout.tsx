@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col bg-[#f4edc9] text-gray-900">
-        <header className="bg-[#f6efc8] border-b border-[#e2d9b5] sticky top-0 z-50 bg-[#f4edc9] px-4 md:px-8 shadow-[0_2px_10px_rgba(0,0,0,0.08)]">
+        <header className="bg-[#f6efc8] border-b border-[#e2d9b5] bg-[#f4edc9] px-4 md:px-8 shadow-[0_2px_10px_rgba(0,0,0,0.08)]">
           {/* Top slogan row */}
           <div className="max-w-7xl mx-auto px-4 pt-3">
             <div className="flex justify-between text-xs md:text-sm font-semibold text-[#0f6b3a]">
@@ -85,10 +85,11 @@ export default function RootLayout({
               />
             </div>
           </div>
-
-          {/* Navigation */}
-          <NavMenu />
         </header>
+        {/* Sticky nav ONLY */}
+        <div className="sticky top-0 z-50 bg-[#f7f0c8]">
+          <NavMenu />
+        </div>
 
         <main className="flex-1">{children}</main>
 
