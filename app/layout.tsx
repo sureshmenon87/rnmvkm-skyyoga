@@ -61,11 +61,11 @@ export default function RootLayout({
                 குரு வேதாத்திரி மகரிஷி அவர்களின் அருளாசியுடன்
               </h1>
 
-              <h2 className="text-sm md:text-lg font-semibold text-[#1f3b6d]">
+              <h2 className="text-[11px] md:text-lg font-semibold text-[#1f3b6d]">
                 குரோம்பேட்டை ராதா நகர் மனவளக்கலை மன்றம் அறக்கட்டளை
               </h2>
 
-              <p className="text-xs md:text-sm text-[#1f3b6d]">
+              <p className="text-sm md:text-sm text-[#1f3b6d]">
                 7, ஏழுமலை தெரு, ராதா நகர், குரோம்பேட்டை, சென்னை – 600 044.
               </p>
 

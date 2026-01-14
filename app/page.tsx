@@ -67,7 +67,7 @@ export default function Home() {
         <img
           src="/maharishi.png"
           alt="Vethathiri Maharishi"
-          className="absolute left-1/2 -translate-x-1/2 bottom-[180px] md:bottom-[220px] 
+          className="absolute left-1/2 -translate-x-1/2 bottom-[100px] md:bottom-[220px] 
                w-64 md:w-96 z-10 animate-[divineGlow_4s_ease-in-out_infinite]"
         />
 
@@ -86,7 +86,7 @@ export default function Home() {
           அருட்தந்தை வேதாத்திரி மகரிஷி
         </p>
 
-        <p className="mt-4 text-[#7b1c0d] text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+        <p className="mt-4 text-[#7b1c0d] text-sm text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
           {blessingQuote}
         </p>
       </div>
