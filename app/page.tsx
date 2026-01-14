@@ -1,4 +1,60 @@
+import Divider from "./components/Divider";
+
 export default function Home() {
+  const contactsCard1 = [
+    {
+      name: "உமையாள்புரம் அறிவுத் திருக்கோவில்",
+      phone: " 9677232354, 9176902545",
+    },
+    {
+      name: "M.G. நகர் தவமயம்",
+      phone: "9791007520, 9444630594",
+    },
+    {
+      name: "விஸ்வநாதன் தெரு தவமயம்",
+      phone: "9962435097, 9841640623",
+    },
+    {
+      name: "A.K. நகர் தவமயம்",
+      phone: "9080897951, 9444898982",
+    },
+  ];
+  const contactsCard2 = [
+    {
+      name: "வேதகிரி தெரு தவமயம்",
+      phone: "9444754471, 6381708206",
+    },
+    {
+      name: "ஸ்டேசன் ரோடு தவமயம்",
+      phone: "9865377374",
+    },
+    {
+      name: "தாம்பரம் மாநகர் அறிவுத் திருக்கோவில்",
+      phone: "9884380823, 7397480619",
+    },
+    {
+      name: "திருமுருகன் தெரு தவமயம்",
+      phone: "9444261409, 8903853154",
+    },
+  ];
+  const contactsCard3 = [
+    {
+      name: "தென்றல் நகர் தவமயம்",
+      phone: "9840242267, 9962341133",
+    },
+    {
+      name: "வ.உ.சி. தெரு தவமயம்",
+      phone: "9444306556",
+    },
+    {
+      name: "கண்டிகை தவமயம்",
+      phone: "9080458416",
+    },
+    {
+      name: "மூவரசம்பட்டு தவமயம்",
+      phone: "7397265107, 8072226463",
+    },
+  ];
   return (
     <div className="bg-[#f4edc9] ">
       {/* Maharishi & Mandram */}
@@ -37,55 +93,50 @@ export default function Home() {
         <img
           src="/divider.png"
           alt="decorative divider"
-          className="w-[260px] md:w-[420px] opacity-80"
+          className="
+    w-[260px] md:w-[420px]
+    brightness-125
+    contrast-125
+    saturate-150
+    drop-shadow-[0_2px_6px_rgba(212,175,55,0.6)]
+  "
         />
       </div>
       {/* Contact Cards */}
       <section className="mt-10 mb-24 flex flex-col md:flex-row justify-center gap-20 px-6">
         {/* Card 1 */}
         <div className="bg-[#7b1c0d] text-white rounded-2xl w-full md:w-[260px] min-h-[220px] py-6 flex flex-col justify-start items-center shadow-xl">
-          <p className="text-sm font-semibold">உமையாள்புரம்</p>
-          <p className="mt-2 font-bold">அறிவுத் திருக்கோவில்</p>
-          <p className="mt-2 text-sm">📞 9677232354, 9176902545</p>
-          <img src="/divider.png" className="mt-4 w-48" />
-          <p className="text-sm font-semibold">M.G. நகர் தவமயம்</p>
-          <p className="mt-2 text-sm">📞 9791007520, 9444630594</p>
-          <img src="/divider.png" className="mt-4 w-48" />
-          <p className="text-sm font-semibold">விஸ்வநாதன் தெரு தவமயம்</p>
-          <p className="mt-2 text-sm">📞 9962435097, 9841640623</p>
-          <img src="/divider.png" className="mt-4 w-48" />
-          <p className="text-sm font-semibold">A.K. நகர் தவமயம்</p>
-          <p className="mt-2 text-sm">📞 9080897951, 9444898982</p>
+          {contactsCard1.map((item, index) => (
+            <div key={item.name} className="text-center">
+              <p className="text-sm font-semibold">{item.name}</p>
+              <p className="mt-2 text-sm">📞 {item.phone}</p>
+
+              {index !== contactsCard1.length - 1 && <Divider />}
+            </div>
+          ))}
         </div>
 
         {/* Card 2 */}
         <div className="bg-[#7b1c0d] text-white rounded-2xl w-full md:w-[260px] min-h-[220px] py-6 flex flex-col justify-start items-center shadow-xl">
-          <p className="text-sm font-semibold">வேதகிரி தெரு தவமயம்</p>
-          <p className="mt-2 text-sm">📞 9444754471, 6381708206</p>
-          <img src="/divider.png" className="mt-4 w-48" />
-          <p className="text-sm font-semibold">ஸ்டேசன் ரோடு தவமயம்</p>
-          <p className="mt-2 text-sm">📞 9865377374</p>
-          <p className="text-sm font-semibold">தாம்பரம் மாநகர்</p>
-          <p className="mt-2 font-bold">அறிவுத் திருக்கோவில்</p>
-          <p className="mt-2 text-sm">📞 9884380823, 7397480619</p>
-          <img src="/divider.png" className="mt-4 w-48" />
-          <p className="text-sm font-semibold">திருமுருகன் தெரு </p>
-          <p className="mt-2 font-bold">தவமயம்</p>
-          <p className="mt-2 text-sm">📞 9444261409, 8903853154</p>
+          {contactsCard2.map((item, index) => (
+            <div key={item.name} className="text-center">
+              <p className="text-sm font-semibold">{item.name}</p>
+              <p className="mt-2 text-sm">📞 {item.phone}</p>
+
+              {index !== contactsCard1.length - 1 && <Divider />}
+            </div>
+          ))}
         </div>
         {/* Card 3 */}
         <div className="bg-[#7b1c0d] text-white rounded-2xl w-full md:w-[260px] min-h-[220px] py-6 flex flex-col justify-start items-center shadow-xl">
-          <p className="text-sm font-semibold">தென்றல் நகர் தவமயம்</p>
-          <p className="mt-2 text-sm">📞 9840242267, 9962341133</p>
-          <img src="/divider.png" className="mt-4 w-48" />
-          <p className="text-sm font-semibold">வ.உ.சி. தெரு தவமயம்</p>
-          <p className="mt-2 text-sm">📞 9444306556</p>
-          <img src="/divider.png" className="mt-4 w-48" />
-          <p className="text-sm font-semibold">கண்டிகை தவமயம்</p>
-          <p className="mt-2 text-sm">📞 9080458416</p>
-          <img src="/divider.png" className="mt-4 w-48" />
-          <p className="text-sm font-semibold">மூவரசம்பட்டு தவமயம்</p>
-          <p className="mt-2 text-sm">📞 7397265107, 8072226463</p>
+          {contactsCard3.map((item, index) => (
+            <div key={item.name} className="text-center">
+              <p className="text-sm font-semibold">{item.name}</p>
+              <p className="mt-2 text-sm">📞 {item.phone}</p>
+
+              {index !== contactsCard1.length - 1 && <Divider />}
+            </div>
+          ))}
         </div>
       </section>
     </div>
