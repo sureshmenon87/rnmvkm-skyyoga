@@ -14,6 +14,10 @@ export default function LearnPage() {
     <main className="bg-[#FFFFED] font-tamil">
       {/* Maharishi intro */}
       <MaharishiRibbonHeader />
+      {/* Subtle divider */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="my-10 h-px bg-[#e6d6a8]/60" />
+      </div>
 
       {/* Training content */}
       <section className="hidden md:grid grid-cols-[260px_1fr] gap-8 max-w-7xl mx-auto px-6 pb-16 bg-[#FFFFEC]">
@@ -28,7 +32,7 @@ export default function LearnPage() {
                 onClick={() => setActiveId(item.id)}
                 className={`
           group relative w-full rounded-md px-4 py-3 pl-10 text-left
-          border transition-colors duration-200 
+          border transition-colors duration-200 font-medium cursor-pointer
           ${
             isActive
               ? "bg-[#fff3d6] border-[#c97a2b] text-[#891e0d]"
@@ -83,7 +87,7 @@ export default function LearnPage() {
                   key={i}
                   className="grid grid-cols-2 border-t border-yellow-300/50"
                 >
-                  <div className="p-4 space-y-2 leading-relaxed text-[#1f3b5c]">
+                  <div className="p-4 space-y-2 leading-relaxed font-medium text-[#1F3B5C]">
                     {row.name}
                   </div>
                   <div className="p-4 text-[#1f3b5c] space-y-1 leading-relaxed">

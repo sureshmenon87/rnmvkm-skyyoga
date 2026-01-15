@@ -22,7 +22,7 @@ export const payirchigal: Payirchi[] = [
   {
     id: "simplified_exercises",
     title: "எளியமுறை உடற்பயிற்சி",
-    image: "/yoga_posture.png",
+    image: "/eliya-murai-udarpayirchi-desktop.png",
     type: "table",
     tableData: [
       {
@@ -96,7 +96,7 @@ export const payirchigal: Payirchi[] = [
   {
     id: "simplified_kayakalpa",
     title: "காய கல்ப பயிற்சி",
-    image: "/yoga_posture.png",
+    image: "/kaaya-kalpa-desktop.png",
     type: "paragraph",
     paragraph: {
       heading: "நன்மைகள் :",
@@ -114,7 +114,7 @@ export const payirchigal: Payirchi[] = [
   {
     id: "simplified_meditation",
     title: "எளிய முறை தியான பயிற்சி",
-    image: "/yoga_posture.png",
+    image: "/simplified-meditation-colored-desktop.png",
     type: "table",
     tableData: [
       {
@@ -187,7 +187,7 @@ export const payirchigal: Payirchi[] = [
   {
     id: "simplified_agathaivu",
     title: "அகத்தாய்வு பயிற்சிகள்",
-    image: "/yoga_posture.png",
+    image: "/agathaayvu-colored-desktop.png",
     type: "paragraph",
     paragraph: {
       heading: "பயிற்சிகள் :",
@@ -214,7 +214,7 @@ export const payirchigal: Payirchi[] = [
   {
     id: "simplified_gazing",
     title: "ஜீவ காந்த பெறுக்கு பயிற்சிகள்",
-    image: "/yoga_posture.png",
+    image: "/simplified-gazing-desktop.png",
     type: "paragraph",
     paragraph: {
       heading: "பயிற்சிகள் :",

@@ -11,9 +11,9 @@ export default function MaharishiRibbonHeader() {
         height={300}
         className="
           absolute bottom-0 left-0 w-full
-          h-[220px] md:h-[260px]
+         h-[200px] md:h-[220px]
           object-cover
-          opacity-95
+          opacity-[0.18] md:opacity-[0.22]
           pointer-events-none
         "
         priority
@@ -28,9 +28,9 @@ export default function MaharishiRibbonHeader() {
             <Image
               src="/maharishi.png"
               alt="Maharishi"
-              width={180}
-              height={220}
-              className="object-contain"
+              width={210}
+              height={260}
+              className="object-contain md:scale-105"
               priority
             />
           </div>
@@ -42,9 +42,10 @@ export default function MaharishiRibbonHeader() {
             </h1>
 
             <p className="mb-6 text-[#1F3B5C] leading-[1.9] max-w-3xl">
-              பேரண்டைய கோட்பாடுகளின், தோய்ந்த மனம், கவலை இல்லாமல் மன அமைதியுடன்
-              வாழ, தன்மனிதன் வாழ, உலக சக்தி அதிகரிக்க உதவும் மனவளக்கலை யோகா
-              பயிற்சிகள் கற்றுக் கொண்டு பயனடை அன்புடன் அழைக்கிறோம்.
+              பேரன்புடைய சகோதர சகோதரிகளே, <br />
+              நோயில்லாமல் வாழ , கவலை இல்லாமல் மன அமைதியுடன் வாழ, தன்னம்பிக்கை
+              வளர, ஞாபக சக்தி அதிகரிக்க உதவும் மனவளக்கலை யோகா பயிற்சிகள் கற்றுக்
+              கொண்டு பயன்பெற அன்புடன் அழைக்கிறோம்.
             </p>
 
             <h2 className="mb-3 font-semibold text-[#7A1F12]">
@@ -53,7 +54,7 @@ export default function MaharishiRibbonHeader() {
 
             <ul className="list-disc list-inside space-y-1 text-[#1F3B5C]">
               <li>உடலுக்கு : எளியமுறை உடற்பயிற்சி</li>
-              <li>உயிருக்கு : காய கற்ப பயிற்சி</li>
+              <li>உயிருக்கு : காய கல்ப பயிற்சி</li>
               <li>மனதுக்கு : தியானம் மற்றும் அகத்தாய்வு</li>
             </ul>
           </div>
