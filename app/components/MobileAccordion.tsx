@@ -36,7 +36,7 @@ export default function MobileAccordion({ items }: { items: Item[] }) {
             <div
               className={`
                 overflow-hidden transition-all duration-300 ease-in-out
-                ${isOpen ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"}
+                ${isOpen ? "max-h-[3000px] opacity-100" : "max-h-0 opacity-0"}
               `}
             >
               <div className="px-4 pb-5 pt-3 text-[#1f3b5c] leading-relaxed">

@@ -123,7 +123,7 @@ export default function LearnPage() {
     animate-fadeIn"
         >
           {/* Section image */}
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mt-2 mb-2 md:mb-4">
             <Image
               src={active.image}
               alt={active.title}
@@ -178,7 +178,7 @@ export default function LearnPage() {
               ))}
 
               {active.paragraph.bullets && (
-                <ul className="list-disc list-inside space-y-1 text-[#1F3B5C]">
+                <ul className="list-disc list-inside space-y-1 text-[#1F3B5C] leading-relaxed md:leading-loose">
                   {active.paragraph.bullets.map((b, i) => (
                     <li key={i}>{b}</li>
                   ))}
