@@ -55,7 +55,15 @@ export default function MaharishiRibbonHeader() {
               இந்த கற்றுத்தரும் பயிற்சிகளும் அதன் நன்மைகளும் :
             </h2>
 
-            <ul className="list-disc list-inside space-y-1 text-[#1F3B5C]">
+            <ul
+              className="
+  list-disc list-inside
+  space-y-1
+  text-[#1F3B5C]
+  text-sm md:text-base
+  leading-relaxed
+"
+            >
               <li>உடலுக்கு : எளியமுறை உடற்பயிற்சி</li>
               <li>உயிருக்கு : காய கல்ப பயிற்சி</li>
               <li>மனதுக்கு : தியானம் மற்றும் அகத்தாய்வு</li>

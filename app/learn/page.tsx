@@ -9,6 +9,7 @@ import MobileAccordion from "../components/MobileAccordion";
 export default function LearnPage() {
   const [activeId, setActiveId] = useState(payirchigal[0].id);
   const active = payirchigal.find((p) => p.id === activeId)!;
+
   const accordionItems = payirchigal.map((item) => ({
     id: item.id,
     title: item.title,
@@ -36,13 +37,13 @@ export default function LearnPage() {
               <p key={idx}>{text}</p>
             ))}
 
-            {item.paragraph.bullets?.length > 0 && (
+            {item.paragraph?.bullets?.length ? (
               <ul className="list-disc pl-5 space-y-1">
                 {item.paragraph.bullets.map((b, idx) => (
                   <li key={idx}>{b}</li>
                 ))}
               </ul>
-            )}
+            ) : null}
           </>
         )}
 
