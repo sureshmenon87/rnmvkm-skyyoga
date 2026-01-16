@@ -10,21 +10,17 @@ export default function MaharishiRibbonHeader() {
         width={2000}
         height={300}
         className="
-          absolute bottom-0 left-0 w-full
-         h-[200px] md:h-[220px]
-          object-cover
-          opacity-[0.18] md:opacity-[0.22]
-          pointer-events-none
-        "
+          absolute right-0 top-1/2 -translate-y-1/2
+             w-[600px] opacity-20 pointer-events-none       "
         priority
       />
 
       {/* Content container */}
-      <div className="relative max-w-7xl mx-auto px-6 pt-10 pb-20 md:pb-24">
+      <div className="max-w-7xl mx-auto px-6 pt-8">
         {/* Maharishi + Text */}
-        <div className="grid grid-cols-[200px_1fr] gap-8 items-start">
+        <div className="grid md:grid-cols-[220px_1fr] gap-6 items-startt">
           {/* Maharishi */}
-          <div className="flex justify-center">
+          <div className="w-[200px] md:w-[220px] mx-auto md:mx-0">
             <Image
               src="/maharishi.png"
               alt="Maharishi"
@@ -37,18 +33,25 @@ export default function MaharishiRibbonHeader() {
 
           {/* Text */}
           <div>
-            <h1 className="mb-5 text-xl md:text-2xl font-semibold text-[#7A1F12]">
+            <h1
+              className=" text-[#7a1f0e]
+    font-bold
+    text-xl md:text-3xl
+    text-center md:text-left
+    leading-snug
+    mt-2 md:mt-6"
+            >
               மனவளக்கலை யோகா பயிற்சிகள்
             </h1>
 
-            <p className="mb-6 text-[#1F3B5C] leading-[1.9] max-w-3xl">
+            <p className="mt-4 leading-relaxed text-[#1f3b5c]">
               பேரன்புடைய சகோதர சகோதரிகளே, <br />
               நோயில்லாமல் வாழ , கவலை இல்லாமல் மன அமைதியுடன் வாழ, தன்னம்பிக்கை
               வளர, ஞாபக சக்தி அதிகரிக்க உதவும் மனவளக்கலை யோகா பயிற்சிகள் கற்றுக்
               கொண்டு பயன்பெற அன்புடன் அழைக்கிறோம்.
             </p>
 
-            <h2 className="mb-3 font-semibold text-[#7A1F12]">
+            <h2 className="mt-3 mb-3 font-semibold text-[#7A1F12]">
               இந்த கற்றுத்தரும் பயிற்சிகளும் அதன் நன்மைகளும் :
             </h2>
 

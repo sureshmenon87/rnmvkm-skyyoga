@@ -2,13 +2,68 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import MaharishiHeader from "@/app/components/MaharishiHeader";
 import { payirchigal } from "@/app/data/payirchigal";
 import MaharishiRibbonHeader from "../components/MaharishiRibbonHeader";
+import MobileAccordion from "../components/MobileAccordion";
 
 export default function LearnPage() {
   const [activeId, setActiveId] = useState(payirchigal[0].id);
   const active = payirchigal.find((p) => p.id === activeId)!;
+  const accordionItems = payirchigal.map((item) => ({
+    id: item.id,
+    title: item.title,
+
+    content: (
+      <div className="space-y-3 text-[#1f3b5c] leading-relaxed">
+        {/* Image shown ONLY when expanded */}
+        {item.image && (
+          <img
+            src={item.image}
+            alt={item.title}
+            className="mx-auto h-[90px] object-contain opacity-90"
+          />
+        )}
+        {/* PARAGRAPH TYPE */}
+        {item.type === "paragraph" && item.paragraph && (
+          <>
+            {item.paragraph.heading && (
+              <p className="font-medium text-[#891e0d]">
+                {item.paragraph.heading}
+              </p>
+            )}
+
+            {item.paragraph.blocks?.map((text, idx) => (
+              <p key={idx}>{text}</p>
+            ))}
+
+            {item.paragraph.bullets?.length > 0 && (
+              <ul className="list-disc pl-5 space-y-1">
+                {item.paragraph.bullets.map((b, idx) => (
+                  <li key={idx}>{b}</li>
+                ))}
+              </ul>
+            )}
+          </>
+        )}
+
+        {/* TABLE TYPE */}
+        {item.type === "table" && item.tableData && (
+          <div className="space-y-4">
+            {item.tableData.map((row, idx) => (
+              <div key={idx}>
+                <p className="font-medium text-[#891e0d] mb-1">{row.name}</p>
+                <ul className="list-disc pl-5 space-y-1">
+                  {row.benefits.map((benefit, bIdx) => (
+                    <li key={bIdx}>{benefit}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    ),
+  }));
 
   return (
     <main className="bg-[#FFFFED] font-tamil">
@@ -19,6 +74,10 @@ export default function LearnPage() {
         <div className="my-10 h-px bg-[#e6d6a8]/60" />
       </div>
 
+      {/* Mobile */}
+      <div className="block md:hidden mt-6">
+        <MobileAccordion items={accordionItems} />
+      </div>
       {/* Training content */}
       <section className="hidden md:grid grid-cols-[260px_1fr] gap-8 max-w-7xl mx-auto px-6 pb-16 bg-[#FFFFEC]">
         {/* Left list */}
@@ -70,7 +129,7 @@ export default function LearnPage() {
               alt={active.title}
               width={220}
               height={140}
-              className="object-contain"
+              className="mx-auto mb-6 object-contain  h-[110px] sm:h-[120px] md:h-[160px]"
             />
           </div>
 

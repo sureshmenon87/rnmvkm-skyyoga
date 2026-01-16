@@ -103,7 +103,7 @@ export default function RootLayout({
           />
         </div>
 
-        <footer className="bg-[#0b3b5c] text-white text-center py-3 text-xs">
+        <footer className="bg-[#0b3b5c] text-white text-center py-3 text-xs text-sm leading-relaxed opacity-80">
           © 2026 ராதா நகர் SKY யோக மன்றம் இது அதிகாரப்பூர்வ இணையதளம் அல்ல. தகவல்
           சேவைக்காக மட்டுமே.
         </footer>
