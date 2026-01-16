@@ -7,7 +7,7 @@ const navItems = [
   { label: "முகப்பு", href: "/" },
   { label: "பயிற்சிகள்", href: "/learn" },
   { label: "தியானம் செய்முறை", href: "/meditation" },
-  { label: "நிகழ்வுகள்", href: "/events" },
+  { label: "நிகழ்ச்சிகள்", href: "/programs" },
 ];
 
 export default function NavMenu() {
