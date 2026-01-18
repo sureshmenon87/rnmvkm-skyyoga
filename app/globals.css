@@ -30,7 +30,8 @@ body {
   min-height: 100%;
 }
 .font-tamil {
-  font-family: "Noto Serif Tamil", "Latha", "Tamil MN", "Kohinoor Tamil",
+  font-family:
+    "Noto Serif Tamil", "Latha", "Tamil MN", "Kohinoor Tamil",
     "Arial Unicode MS", serif;
 }
 
@@ -57,4 +58,29 @@ body {
 
 .animate-fadeIn {
   animation: fadeIn 300ms ease-out;
+}
+
+.program-description h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #7a1c1c;
+}
+
+.program-description ol {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+}
+
+.program-description ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+}
+
+.program-description li {
+  margin-bottom: 0.25rem;
+}
+
+.program-description li::marker {
+  color: #7a1c1c;
 }
