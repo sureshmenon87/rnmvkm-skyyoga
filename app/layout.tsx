@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavMenu from "./components/NavMenu";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -92,6 +93,17 @@ export default function RootLayout({
         </div>
 
         <main className="flex-1">{children}</main>
+        <Toaster
+          position="bottom-center"
+          toastOptions={{
+            duration: 2500,
+            style: {
+              background: "#1f2937", // dark gray
+              color: "#fff",
+              fontSize: "14px",
+            },
+          }}
+        />
         {/* Bottom vignette */}
         <div className="relative w-full h-56 pointer-events-none">
           <div
@@ -103,7 +115,7 @@ export default function RootLayout({
           />
         </div>
 
-        <footer className="bg-[#0b3b5c] text-white text-center py-3 text-xs text-sm leading-relaxed opacity-80">
+        <footer className="bg-[#0b3b5c] text-white text-center py-3 md:text-xs text-[8px] leading-relaxed opacity-80">
           © 2026 ராதா நகர் SKY யோக மன்றம் இது அதிகாரப்பூர்வ இணையதளம் அல்ல. தகவல்
           சேவைக்காக மட்டுமே.
         </footer>
