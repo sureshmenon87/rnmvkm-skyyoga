@@ -37,7 +37,7 @@ export default function InstructionsPage() {
       </h1>
 
       {/* DESKTOP */}
-      <div className="hidden md:flex mx-auto max-w-6xl gap-10 items-start px-6">
+      <div className="hidden md:flex mx-auto max-w-6xl gap-10 items-start px-6 mt-6">
         <InstructionsSidebar
           sections={instructionSections}
           activeId={activeId}
@@ -47,7 +47,7 @@ export default function InstructionsPage() {
       </div>
 
       {/* MOBILE — SAME AS LEARN PAGE */}
-      <div className="md:hidden px-3">
+      <div className="md:hidden px-3 mt-6">
         <MobileInstructionsAccordion sections={instructionSections} />
       </div>
     </main>

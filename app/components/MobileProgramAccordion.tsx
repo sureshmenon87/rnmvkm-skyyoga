@@ -91,7 +91,7 @@ export default function MobileProgramAccordion({
             <p className="text-sm font-medium text-[#8B0000] mb-1">
               வழங்குபவர்கள்:
             </p>
-            <ul className="text-sm space-y-1">
+            <ul className="text-xs space-y-1 text-[#1F3B5C]">
               {program.instructors.map((s) => (
                 <li key={s}>{s}</li>
               ))}
