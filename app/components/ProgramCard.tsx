@@ -58,7 +58,7 @@ export default function ProgramCard({ program }: ProgramCardProps) {
 
             {/* RIGHT COLUMN */}
             <div
-              className=" bg-[#FBF2E8] rounded-xl p-5 
+              className=" bg-[#FFF8E8] rounded-xl p-5 
               rounded-xl
               border border-[#e6cfa8]
                shadow-[0_4px_12px_rgba(0,0,0,0.06)]
@@ -90,7 +90,7 @@ export default function ProgramCard({ program }: ProgramCardProps) {
                 {program.description && (
                   <button
                     onClick={() => setExpanded(!expanded)}
-                    className="text-sm font-medium text-[#8b0000] hover:underline"
+                    className="cursor-pointer text-xs font-medium text-[#8b0000] hover:underline"
                   >
                     {expanded ? "சுருக்கமாகப் படிக்க" : "மேலும் விவரங்களுக்கு"}
                   </button>
@@ -173,14 +173,14 @@ export default function ProgramCard({ program }: ProgramCardProps) {
                 <div className="flex gap-6 text-xs text-[#555]">
                   <button
                     onClick={() => copyProgram(program)}
-                    className="flex items-center gap-1 hover:text-[#000]"
+                    className=" cursor-pointer flex items-center gap-1 hover:text-[#000]"
                   >
                     📋 Copy
                   </button>
 
                   <button
                     onClick={() => shareProgram(program)}
-                    className="flex items-center gap-1 hover:text-[#000]"
+                    className=" cursor-pointer flex items-center gap-1 hover:text-[#000]"
                   >
                     🔗 Share
                   </button>
