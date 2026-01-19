@@ -24,7 +24,7 @@ export default function MobileProgramAccordion({
   return (
     <div
       className={`rounded-xl border p-4
-        border-[#E6D8B5] bg-[#FFF8E8]
+        border-[#E6D8B5] bg-[#fff3d6]
         shadow-[0_4px_12px_rgba(0,0,0,0.06)]
         transition-all duration-300`}
     >
