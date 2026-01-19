@@ -168,6 +168,8 @@ export default function MobileProgramAccordion({
             )}
           </div>
         )}
+        {/* DIVIDER */}
+        <div className="my-4 h-px bg-[#e6d6a8] " />
         {/* ACTIONS */}
         <div className="mt-2 flex items-center gap-6 text-xs">
           <button
