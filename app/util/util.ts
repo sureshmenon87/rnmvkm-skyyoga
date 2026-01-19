@@ -2,6 +2,8 @@ import { differenceInCalendarDays, parse, parseISO, isValid } from "date-fns";
 import { Program } from "../types/program";
 import { format } from "date-fns";
 import { ta } from "date-fns/locale";
+import { htmlToText } from "html-to-text";
+
 export function formatDate(date: string) {
   return new Date(date).toLocaleDateString("ta-IN", {
     day: "2-digit",
@@ -11,27 +13,30 @@ export function formatDate(date: string) {
 }
 
 import { toast } from "react-hot-toast";
+import { buildProgramText } from "../lib/programText";
 
 export function copyProgram(program: Program) {
-  const text = `
-${program.title}
-நேரம்: ${program.time}
-${program.location?.address ?? ""}
-  `;
+  const text = buildProgramText(program);
+
   navigator.clipboard.writeText(text);
   toast.success("நிகழ்ச்சி விவரம் நகலெடுக்கப்பட்டது");
 }
-export function shareProgram(program: Program) {
-  if (!navigator.share) {
-    toast.error("Share ஆதரவு இல்லை");
-    return;
-  }
+export async function shareProgram(program: Program) {
+  const text = buildProgramText(program);
 
-  navigator.share({
-    title: program.title,
-    text: program.time,
-    url: program.location?.mapUrl,
-  });
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: program.title,
+        text,
+      });
+    } catch {
+      // user cancelled share – do nothing
+    }
+  } else {
+    await navigator.clipboard.writeText(text);
+    toast.success("நிகழ்ச்சி விவரம் நகலெடுக்கப்பட்டது");
+  }
 }
 
 /**
@@ -62,3 +67,11 @@ export const getTamilDayWithDateFns = (dateStr: string): string => {
   // 2. Format using 'EEEE' for full weekday name in the Tamil locale
   return format(parsedDate, "EEEE", { locale: ta });
 };
+
+export function htmlToPlainText(html: string): string {
+  if (!html) return "";
+
+  return htmlToText(html, {
+    wordwrap: false,
+  });
+}

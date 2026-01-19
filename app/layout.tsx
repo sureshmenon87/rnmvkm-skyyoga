@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavMenu from "./components/NavMenu";
 import { Toaster } from "react-hot-toast";
+import { Phone, Mail } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -70,10 +71,27 @@ export default function RootLayout({
                 7, ஏழுமலை தெரு, ராதா நகர், குரோம்பேட்டை, சென்னை – 600 044.
               </p>
 
-              <p className="text-xs md:text-sm text-[#1f3b6d] ">
-                <span>📞 9884374090, 9962206217 &nbsp;</span>
-                <span>✉️ skychrompet@yahoo.com</span>
-              </p>
+              <div
+                className="
+    text-xs md:text-sm text-[#1f3b6d]
+    flex flex-col md:flex-row
+    items-center
+    gap-1 md:gap-6
+    justify-center
+  "
+              >
+                {/* Phone */}
+                <div className="flex items-center gap-2">
+                  <Phone size={14} strokeWidth={1.8} />
+                  <span>9884374090, 9962206217</span>
+                </div>
+
+                {/* Email */}
+                <div className="flex items-center gap-2">
+                  <Mail size={14} strokeWidth={1.8} />
+                  <span>skychrompet@yahoo.com</span>
+                </div>
+              </div>
             </div>
 
             {/* Right Logo */}

@@ -12,7 +12,7 @@ import {
 
 import { sanitizeHtml } from "../lib/sanitizeHtml";
 import { getTamilDayFromISODate } from "../lib/dateUtils";
-
+import { Copy, Share2 } from "lucide-react";
 type ProgramCardProps = {
   program: Program;
 };
@@ -175,14 +175,16 @@ export default function ProgramCard({ program }: ProgramCardProps) {
                     onClick={() => copyProgram(program)}
                     className=" cursor-pointer flex items-center gap-1 hover:text-[#000]"
                   >
-                    📋 Copy
+                    <Copy size={16} strokeWidth={1.8} />
+                    <span>நகலெடு</span>
                   </button>
 
                   <button
                     onClick={() => shareProgram(program)}
                     className=" cursor-pointer flex items-center gap-1 hover:text-[#000]"
                   >
-                    🔗 Share
+                    <Share2 size={16} strokeWidth={1.8} />
+                    <span>பகிர்</span>
                   </button>
                 </div>
               </div>

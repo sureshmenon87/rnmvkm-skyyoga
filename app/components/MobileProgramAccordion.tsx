@@ -5,6 +5,7 @@ import { Program } from "../types/program";
 import { sanitizeHtml } from "@/app/lib/sanitizeHtml";
 import { copyProgram, programDuration, shareProgram } from "../util/util";
 import { formatDateToDDMMYYYY, getTamilDayFromISODate } from "../lib/dateUtils";
+import { Copy, Share2 } from "lucide-react";
 
 export default function MobileProgramAccordion({
   program,
@@ -81,7 +82,8 @@ export default function MobileProgramAccordion({
         {/* BASIC INFO */}
         {program.time && (
           <p className="mt-2 text-sm text-[#1F3B5C]">
-            <span className="font-semibold text-[#7A1C1C]">நேரம்:</span>{" "}
+            <span className="font-semibold text-[#7A1C1C]">நேரம்:</span>
+            <br />
             <span>{program.time}</span>
           </p>
         )}
@@ -172,14 +174,16 @@ export default function MobileProgramAccordion({
             onClick={() => copyProgram(program)}
             className=" cursor-pointer text-[#8B1C1C] hover:underline"
           >
-            நகலெடு
+            <Copy size={16} strokeWidth={1.8} />
+            <span>நகலெடு</span>
           </button>
 
           <button
             onClick={() => shareProgram(program)}
             className=" cursor-pointer text-[#8B1C1C] hover:underline"
           >
-            பகிர
+            <Share2 size={16} strokeWidth={1.8} />
+            <span>பகிர்</span>
           </button>
         </div>
       </div>
