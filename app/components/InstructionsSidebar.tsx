@@ -12,7 +12,7 @@ export default function InstructionsSidebar({
   onSelect,
 }: Props) {
   return (
-    <aside className="w-64 space-y-3">
+    <aside className="w-64 space-y-3 sticky top-24 items-start">
       {sections.map((section, index) => {
         const active = section.id === activeId;
 
@@ -21,15 +21,31 @@ export default function InstructionsSidebar({
             key={section.id}
             onClick={() => onSelect(section.id)}
             className={`
-              w-full rounded-md px-4 py-2 text-left
-              ${
-                active
-                  ? "bg-[#7A1E12] text-white"
-                  : "bg-[#8B1C0D] text-[#FFFBEA]"
-              }
-            `}
+    relative w-full rounded-lg px-4 py-3 text-left
+    transition-all duration-200
+    cursor-pointer
+    ${
+      active
+        ? "bg-[#7A1E12] text-[#FFFBEA] shadow-md"
+        : "bg-[#8B1C0D] text-[#FFFBEA] hover:bg-[#A12414]"
+    }
+  `}
           >
-            {section.title}
+            {/* ACTIVE DOT */}
+            {active && (
+              <span
+                className="
+        absolute left-3 top-1/2
+        -translate-y-1/2
+        h-2.5 w-2.5
+        rounded-full
+        bg-[#F2C94C]
+      "
+              />
+            )}
+
+            {/* TEXT */}
+            <span className="ml-4">{section.title}</span>
           </button>
         );
       })}
