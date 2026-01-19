@@ -7,35 +7,37 @@ import InstructionsContent from "@/app/components/InstructionsContent";
 import MobileInstructionsAccordion from "../components/MobileInstructionsAccordion";
 
 export default function InstructionsPage() {
-  const [activeId, setActiveId] = useState(instructionSections[0].id);
+  const [activeId, setActiveId] = useState(instructionSections[0]?.id);
 
   const activeSection = instructionSections.find((s) => s.id === activeId);
 
   return (
-    <main className="bg-[#FFFFED] px-8 py-10">
+    <main className="bg-[#FFFFED] py-8 md:py-10">
       {/* HEADER IMAGE */}
-      <div className="flex justify-center mb-6">
+      <div className="flex justify-center mb-4 md:mb-6">
         <img
-          src="maharishi.png"
+          src="/maharishi.png"
           alt="Maharishi blessing"
-          className="h-48 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)"
+          className="h-40 md:h-48 w-auto object-contain
+          drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]"
         />
       </div>
+
+      {/* TITLE */}
       <h1
         className="
-    text-center font-semibold text-[#7A1E12]
-    text-lg
-    sm:text-xl
-    md:text-2xl
-    leading-relaxed
-    px-4
-  "
+          text-center text-[#8b0000]
+          text-lg md:text-xl
+          font-semibold
+          mb-8 md:mb-10
+          px-3
+        "
       >
         மனவளக்கலைப் பயிற்சியாளர்கள் பின்பற்ற வேண்டிய வழிமுறைகள்
       </h1>
 
       {/* DESKTOP */}
-      <div className="hidden md:flex mx-auto max-w-6xl gap-10 items-start">
+      <div className="hidden md:flex mx-auto max-w-6xl gap-10 items-start px-6">
         <InstructionsSidebar
           sections={instructionSections}
           activeId={activeId}
@@ -44,8 +46,8 @@ export default function InstructionsPage() {
         <InstructionsContent section={activeSection} />
       </div>
 
-      {/* MOBILE */}
-      <div className="md:hidden px-4">
+      {/* MOBILE — SAME AS LEARN PAGE */}
+      <div className="md:hidden px-3">
         <MobileInstructionsAccordion sections={instructionSections} />
       </div>
     </main>

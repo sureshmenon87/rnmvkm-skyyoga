@@ -37,6 +37,7 @@ export default function MaharishiRibbonHeader() {
               className=" text-[#7a1f0e]
     font-bold
     text-xl md:text-3xl
+  
     text-center md:text-left
     leading-snug
     mt-2 md:mt-6"
@@ -44,7 +45,7 @@ export default function MaharishiRibbonHeader() {
               மனவளக்கலை யோகா பயிற்சிகள்
             </h1>
 
-            <p className="mt-4 leading-relaxed text-[#1f3b5c]">
+            <p className="mt-4 leading-relaxed text-[#1f3b5c] text-sm/6">
               பேரன்புடைய சகோதர சகோதரிகளே, <br />
               நோயில்லாமல் வாழ , கவலை இல்லாமல் மன அமைதியுடன் வாழ, தன்னம்பிக்கை
               வளர, ஞாபக சக்தி அதிகரிக்க உதவும் மனவளக்கலை யோகா பயிற்சிகள் கற்றுக்

@@ -7,12 +7,15 @@ import { mockPrograms } from "@/app/data/programs.mock";
 import MobileProgramAccordion from "@/app/components/MobileProgramAccordion";
 import ProgramCard from "@/app/components/ProgramCard";
 import { getCurrentTamilMonth } from "../lib/dateUtils";
+import MandramDailySchedule from "../components/MandramDailySchedule";
 
 export default async function ProgramsPage() {
   const programs = mockPrograms; // await getCurrentMonthEvents();
 
   return (
     <main className="bg-[#FFFFED] px-6 py-8">
+      <MandramDailySchedule />
+      <hr className="my-8 border-[#E6CFA8]" />
       <h1 className="mb-8 text-center text-2xl font-semibold text-[#7A1E12]">
         {getCurrentTamilMonth()} மாத நிகழ்ச்சிகள் நிரல்
       </h1>

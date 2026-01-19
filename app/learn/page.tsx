@@ -38,7 +38,7 @@ export default function LearnPage() {
             ))}
 
             {item.paragraph?.bullets?.length ? (
-              <ul className="list-disc pl-5 space-y-1">
+              <ul className="list-disc pl-5 space-y-1 ">
                 {item.paragraph.bullets.map((b, idx) => (
                   <li key={idx}>{b}</li>
                 ))}
@@ -49,11 +49,11 @@ export default function LearnPage() {
 
         {/* TABLE TYPE */}
         {item.type === "table" && item.tableData && (
-          <div className="space-y-4">
+          <div className="space-y-4 payirchigal-benefits">
             {item.tableData.map((row, idx) => (
               <div key={idx}>
                 <p className="font-medium text-[#891e0d] mb-1">{row.name}</p>
-                <ul className="list-disc pl-5 space-y-1">
+                <ul className="list-disc pl-5 space-y-1 text-sm/6">
                   {row.benefits.map((benefit, bIdx) => (
                     <li key={bIdx}>{benefit}</li>
                   ))}

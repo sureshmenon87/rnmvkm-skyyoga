@@ -160,3 +160,18 @@ body {
   color: #d6b27c;
   margin-top: 0.25rem;
 }
+
+/* === Payirchigal page: remove list dots on mobile === */
+@media (max-width: 640px) {
+  .payirchigal-benefits ul,
+  .payirchigal-benefits ol {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .payirchigal-benefits li {
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
