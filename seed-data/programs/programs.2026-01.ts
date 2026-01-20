@@ -1,6 +1,6 @@
-import { Program } from "../types/program";
+import { Program } from "../../app/types/program";
 
-export const mockPrograms: Program[] = [
+export const programs_2026_01: Program[] = [
   {
     id: "basic-yoga-01-01-2026",
     title: "யோக அடிப்படை பயிற்சி",

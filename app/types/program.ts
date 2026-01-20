@@ -1,16 +1,16 @@
 export type ProgramType = "single" | "range";
+
 export interface Program {
-  id: string;
+  id: string; // Firestore doc id
   title: string;
 
-  startDate: string; // "16 January 2026"
-  endDate?: string; // "16 January 2026"
   programType: ProgramType;
 
-  day?: string; // "வெள்ளிக்கிழமை"
-  days?: number[];
+  // Dates (ISO format ONLY)
+  startDate: string; // "2026-01-16"
+  endDate?: string; // "2026-01-28"
 
-  time?: string; // "9.30 – 1.00"
+  time?: string; // "காலை 10.00 முதல் மதியம் 4.00 மணி வரை"
 
   location?: {
     name?: string;
@@ -18,12 +18,13 @@ export interface Program {
     mapUrl?: string;
   };
 
-  instructors?: string[]; // supports multiple instructors
+  instructors?: string[];
 
-  description?: string; // HTML allowed (basic)
+  description?: string; // HTML (basic tags only)
 
-  cancelled?: boolean;
   contacts?: string[];
 
-  createdAt?: string; // firebase
+  cancelled?: boolean;
+
+  createdAt?: any; // Firebase Timestamp
 }
