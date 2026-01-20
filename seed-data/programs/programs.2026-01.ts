@@ -5,6 +5,7 @@ export const programs_2026_01: Program[] = [
     id: "basic-yoga-01-01-2026",
     title: "யோக அடிப்படை பயிற்சி",
     programType: "range",
+    monthKey: "2026-01",
 
     startDate: "2026-01-01",
     endDate: "2026-01-12",
@@ -23,6 +24,7 @@ export const programs_2026_01: Program[] = [
     title: "உலக அமைதி தினம்",
     programType: "single",
     time: "காலை 4.00 முதல் 7.30 மணி வரை",
+    monthKey: "2026-01",
 
     startDate: "2026-01-01",
     description: `<h3>உலக அமைதி தினம்</h3>
@@ -38,6 +40,7 @@ export const programs_2026_01: Program[] = [
     title: "மௌனம் ",
     programType: "single",
     time: "காலை 10.30 முதல் மதியம் 4.00 மணி வரை",
+    monthKey: "2026-01",
 
     startDate: "2026-01-01",
   },
@@ -46,6 +49,7 @@ export const programs_2026_01: Program[] = [
     title: "பௌர்ணமி மௌனம் ",
     programType: "single",
     time: "காலை 10.30 முதல் மதியம் 4.00 மணி வரை",
+    monthKey: "2026-01",
 
     startDate: "2026-01-03",
   },
@@ -53,6 +57,7 @@ export const programs_2026_01: Program[] = [
     id: "kaayakalpa-2026-01-04",
     title: "காயகல்ப பயிற்சி",
     programType: "single",
+    monthKey: "2026-01",
 
     description: `<h3>காயகல்ப பயிற்சி</h3>
    <ol>
@@ -81,7 +86,7 @@ export const programs_2026_01: Program[] = [
     programType: "single",
     title: "ஆசிரியர் திறன் மேம்பாட்டு பயிற்சி ",
     startDate: "2026-01-11",
-
+    monthKey: "2026-01",
     time: "காலை 10.00 முதல் மதியம் 4.00 மணி வரை",
 
     instructors: ["முதுநிலை பேராசிரியர். ஆர். சேர்மா செல்வராஜ்"],
@@ -93,15 +98,32 @@ export const programs_2026_01: Program[] = [
     title: "அமாவாசை  மௌனம் ",
     programType: "single",
     time: "காலை 10.30 முதல் மதியம் 4.00 மணி வரை",
-
+    monthKey: "2026-01",
     startDate: "2026-01-18",
   },
   {
     id: "அகத்தாய்வு-22-01-2026",
     title: "அகத்தாய்வு 3",
     programType: "range",
-
+    monthKey: "2026-01",
     startDate: "2026-01-22",
     endDate: "2026-01-23",
+  },
+  {
+    id: "ஆழ்நிலை-தியானம்-25-01-2026",
+    title: "ஆழ்நிலை தியானம்",
+    programType: "single",
+    monthKey: "2026-01",
+    location: {
+      name: "குரோம்பேட்டை ராதா நகர் மனவளக்கலை மன்றம் அறக்கட்டளை",
+      address: "No. 7 ஏழு ஏழுமலை தெரு ராதா நகர் குரோம்பேட்டை",
+      mapUrl: "https://g.co/kgs/YKNV6g",
+    },
+    time: "ஞாயிற்றுக்கிழமை காலை 9,45 முதல் மாலை 4 மணி வரை",
+    description:
+      "தகுதி அகத்தாய்வு மூன்றாம் நிலை முடித்திருக்க வேண்டும்.அன்பர்கள் அனைவருக்கும் உணவுவழங்கப்படுவதால் எல்லோரும் பெயரை பதிவு செய்து கொள்ள வேண்டுகிறோம்  வாழ்க வளமுடன் ",
+    contacts: ["9884374090", "9962206217"],
+
+    startDate: "2026-01-25",
   },
 ];

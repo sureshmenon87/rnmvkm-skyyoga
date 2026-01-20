@@ -1,15 +1,21 @@
-import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "./firebase";
 import type { Program } from "@/app/types/program";
+import { getCurrentMonthKey } from "./dateUtils";
 
 /**
  * read adapter
  * Fetch programs from Firestore
  * Read-only, public-safe
  */
-export async function getPrograms(): Promise<Program[]> {
+export async function fetchPrograms(): Promise<Program[]> {
   try {
-    const q = query(collection(db, "programs"), orderBy("startDate", "asc"));
+    const monthKey = getCurrentMonthKey();
+    const q = query(
+      collection(db, "programs"),
+      where("monthKey", "==", monthKey),
+      orderBy("startDate", "asc"),
+    );
 
     const snapshot = await getDocs(q);
 
@@ -32,7 +38,9 @@ export async function getPrograms(): Promise<Program[]> {
         contacts: data.contacts,
         cancelled: data.cancelled ?? false,
 
-        createdAt: data.createdAt,
+        createdAt: data.createdAt
+          ? data.createdAt.toDate().toISOString()
+          : undefined,
       };
     });
 

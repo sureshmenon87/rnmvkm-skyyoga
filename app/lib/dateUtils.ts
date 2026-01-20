@@ -32,3 +32,9 @@ export function getCurrentTamilMonth(): string {
   const now = new Date();
   return TAMIL_MONTHS[now.getMonth()];
 }
+
+export function getCurrentMonthKey(date = new Date()) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  return `${year}-${month}`; // "2026-01"
+}

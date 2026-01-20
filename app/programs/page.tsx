@@ -1,17 +1,11 @@
-import { getCurrentMonthEvents } from "@/app/lib/getCurrentMonthEvents";
-import EventCard from "@/app/components/ProgramCard";
-import MobileEventAccordion from "@/app/components/MobileProgramAccordion";
-//import { getPrograms } from "@/lib/getPrograms";
-
-import { mockPrograms } from "@/app/data/programs.mock";
 import MobileProgramAccordion from "@/app/components/MobileProgramAccordion";
 import ProgramCard from "@/app/components/ProgramCard";
 import { getCurrentTamilMonth } from "../lib/dateUtils";
 import MandramDailySchedule from "../components/MandramDailySchedule";
+import { fetchPrograms } from "../lib/programs";
 
 export default async function ProgramsPage() {
-  const programs = mockPrograms; // await getCurrentMonthEvents();
-
+  const programs = await fetchPrograms();
   return (
     <main className="bg-[#FFFFED] px-6 py-8">
       <MandramDailySchedule />
@@ -21,14 +15,14 @@ export default async function ProgramsPage() {
       </h1>
 
       <div className="md:hidden space-y-4">
-        {mockPrograms.map((program) => (
+        {programs.map((program) => (
           <MobileProgramAccordion key={program.id} program={program} />
         ))}
       </div>
 
       {/* Desktop */}
       <div className="hidden md:block space-y-6">
-        {mockPrograms.map((e) => (
+        {programs.map((e) => (
           <ProgramCard key={e.id} program={e} />
         ))}
       </div>

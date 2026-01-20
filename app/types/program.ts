@@ -5,6 +5,7 @@ export interface Program {
   title: string;
 
   programType: ProgramType;
+  monthKey: string;
 
   // Dates (ISO format ONLY)
   startDate: string; // "2026-01-16"
