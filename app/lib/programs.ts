@@ -29,6 +29,7 @@ export async function fetchPrograms(): Promise<Program[]> {
 
         startDate: data.startDate,
         endDate: data.endDate,
+        monthKey: data.monthKey,
 
         time: data.time,
 
