@@ -1,19 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavMenu from "./components/NavMenu";
 import { Toaster } from "react-hot-toast";
 import { Phone, Mail } from "lucide-react";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import VisitorTracker from "./components/VisitorTracker";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "குரோம்பேட்டை ராதா நகர் மனவளக்கலை மன்றம் அறக்கட்டளை",
@@ -110,7 +101,11 @@ export default function RootLayout({
           <NavMenu />
         </div>
 
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          {" "}
+          <VisitorTracker />
+          {children}
+        </main>
         <Toaster
           position="bottom-center"
           toastOptions={{
@@ -133,10 +128,7 @@ export default function RootLayout({
           />
         </div>
 
-        <footer className="bg-[#0b3b5c] text-white text-center py-3 md:text-xs text-[8px] leading-relaxed opacity-80">
-          © 2026 ராதா நகர் SKY யோக மன்றம் இது அதிகாரப்பூர்வ இணையதளம் அல்ல. தகவல்
-          சேவைக்காக மட்டுமே.
-        </footer>
+        <Footer></Footer>
       </body>
     </html>
   );

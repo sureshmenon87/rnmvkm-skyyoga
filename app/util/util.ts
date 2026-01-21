@@ -75,3 +75,17 @@ export function htmlToPlainText(html: string): string {
     wordwrap: false,
   });
 }
+
+export function shouldCountVisit(): boolean {
+  if (typeof window === "undefined") return false;
+
+  const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+  const lastVisit = localStorage.getItem("lastVisitDate");
+
+  if (lastVisit === today) {
+    return false; // already counted today
+  }
+
+  localStorage.setItem("lastVisitDate", today);
+  return true;
+}
