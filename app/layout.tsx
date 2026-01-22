@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col bg-[#f4edc9] text-gray-900">
-        <header className="bg-[#f6efc8] border-b border-[#e2d9b5] bg-[#f4edc9] px-4 md:px-8 shadow-[0_2px_10px_rgba(0,0,0,0.08)]">
+        <header className="bg-[#f6efc8]  bg-[#f4edc9] px-4 md:px-8 shadow-[0_2px_10px_rgba(0,0,0,0.08)]">
           {/* Top slogan row */}
           <div className="max-w-7xl mx-auto px-4 pt-3">
             <div className="flex justify-between text-xs md:text-sm font-semibold text-[#0f6b3a]">
@@ -34,9 +34,9 @@ export default function RootLayout({
 
           {/* Logo + Title block */}
           <div
-            className="max-w-7xl mx-auto px-4 py-4
+            className="max-w-7xl mx-auto px-4 py-3 md:py-4
                   grid grid-cols-1 md:grid-cols-[auto_1fr_auto]
-                  items-center gap-4 text-center md:text-left"
+                  items-center gap-3 md:gap-4 text-center md:text-left"
           >
             {/* Left Logo */}
             <div className="flex justify-center md:justify-start">
@@ -101,7 +101,7 @@ export default function RootLayout({
           <NavMenu />
         </div>
 
-        <main className="flex-1 bg-gradient-to-b from-[#fffdf5] to-[#fcf8ee]">
+        <main className="flex-1 bg-gradient-to-b from-[#fffdf5] to-[#fcf8ee] border-t border-[#efe6c8]">
           {" "}
           <VisitorTracker />
           {children}

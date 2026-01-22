@@ -61,8 +61,8 @@ export default function MaharishiRibbonHeader() {
   list-disc list-inside
   space-y-1
   text-[#1F3B5C]
-  text-sm md:text-base
-  leading-relaxed
+  text-[13px] md:text-base
+  leading-snug md:leading-relaxed
 "
             >
               <li>உடலுக்கு : எளியமுறை உடற்பயிற்சி</li>

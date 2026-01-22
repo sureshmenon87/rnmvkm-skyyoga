@@ -10,7 +10,7 @@ import {
   shareProgram,
 } from "../util/util";
 import { formatDateToDDMMYYYY, getTamilDayFromISODate } from "../lib/dateUtils";
-import { Copy, Share2 } from "lucide-react";
+import { Copy, MapPin, Share2, Map, Phone, Landmark } from "lucide-react";
 
 export default function MobileProgramAccordion({
   program,
@@ -47,7 +47,7 @@ export default function MobileProgramAccordion({
     "
         />
         {/* DATE HEADER */}
-        <div className="mb-2 text-sm text-[#7A1C1C] font-medium">
+        <div className="mb-2 text-sm text-[#7a3e1d]/90 text-[#7A1C1C] font-medium">
           {program.programType === "range" ? (
             <div>
               <div>
@@ -87,18 +87,18 @@ export default function MobileProgramAccordion({
         {/* BASIC INFO */}
         {program.time && (
           <p className="mt-2 text-sm text-[#1F3B5C]">
-            <span className="font-semibold text-[#7A1C1C]">நேரம்:</span>
+            <span className="font-semibold text-[#0f6b3a]">நேரம்:</span>
             <br />
-            <span>{program.time}</span>
+            <span className="ml-1 text-[#1F3B5C]/90">{program.time}</span>
           </p>
         )}
 
         {program.instructors && program.instructors.length > 0 && (
           <div className="mt-2">
-            <p className="text-sm font-medium text-[#8B0000] mb-1">
+            <p className="text-sm font-medium text-[#0f6b3a] mb-1">
               வழங்குபவர்கள்:
             </p>
-            <ul className="text-xs space-y-1 text-[#1F3B5C]">
+            <ul className="text-xs space-y-1 text-[#1F3B5C]/90">
               {program.instructors.map((s) => (
                 <li key={s}>{s}</li>
               ))}
@@ -117,7 +117,7 @@ export default function MobileProgramAccordion({
 
         {/* EXPANDED CONTENT */}
         {open && (
-          <div className="mt-4 space-y-4 text-sm text-[#1f3b5c]">
+          <div className="mt-4 space-y-4 text-sm text-[#1f3b5c]/90">
             {/* DESCRIPTION */}
             {program.description && (
               <div
@@ -130,37 +130,49 @@ export default function MobileProgramAccordion({
 
             {/* LOCATION */}
             {program.location?.name && (
-              <div>
-                <div className="font-medium text-[#7A1C1C]">📍 இடம்</div>
-                <div>{program.location.name}</div>
+              <div className="flex items-start gap-2 text-sm text-[#1F3B5C]">
+                <MapPin className="mt-0.5 text-[#0f6b3a]" size={32} />
+                <span className="mt-1 text-[#1f3b5c]/90">
+                  {program.location.name}
+                </span>
               </div>
             )}
 
-            {/* ADDRESS */}
-            {program.location?.address && (
+            {/* Address */}
+            <div className="flex items-start gap-2">
+              <Landmark size={16} className="mt-0.5 text-[#0f6b3a]" />
               <div>
-                <div className="font-medium text-[#7A1C1C]">🏠 முகவரி</div>
-                <div>{program.location.address}</div>
+                <div className="font-semibold">முகவரி</div>
+                <div>{program.location?.address}</div>
               </div>
-            )}
+            </div>
 
             {/* MAP */}
             {program.location?.mapUrl && (
-              <a
-                href={program.location.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#8b0000] underline"
-              >
-                🗺️ Google Map பார்க்க
-              </a>
+              <div className="flex items-center gap-2">
+                <Map size={16} className="text-[#0f6b3a]" />
+                <a
+                  href={program.location?.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0f6b3a] underline underline-offset-2"
+                >
+                  Google Map பார்க்க
+                </a>
+              </div>
             )}
 
             {/* CONTACTS */}
             {program.contacts && program.contacts.length > 0 && (
-              <div>
-                <div className="font-medium text-[#7A1C1C]">📞 தொடர்புக்கு</div>
-                <ul className="space-y-1 mt-1">
+              <div className="flex flex-col gap-1 text-sm text-[#1F3B5C]">
+                {/* Label row */}
+                <div className="flex items-center gap-2 font-medium text-[#0f6b3a]">
+                  <Phone size={16} className="text-[#0f6b3a]" />
+                  <span>தொடர்புக்கு</span>
+                </div>
+
+                {/* Phone numbers */}
+                <ul className="ml-6 space-y-1">
                   {program.contacts.map((phone) => (
                     <li key={phone}>
                       <a href={`tel:${phone}`} className="hover:underline">
@@ -181,7 +193,7 @@ export default function MobileProgramAccordion({
             onClick={() => copyProgram(program)}
             className=" cursor-pointer text-[#8B1C1C] hover:underline"
           >
-            <Copy size={16} strokeWidth={1.8} />
+            <Copy className="text-[#0f6b3a]" size={16} strokeWidth={1.8} />
             <span>நகலெடு</span>
           </button>
 
@@ -190,7 +202,7 @@ export default function MobileProgramAccordion({
               onClick={() => shareProgram(program)}
               className=" cursor-pointer text-[#8B1C1C] hover:underline"
             >
-              <Share2 size={16} strokeWidth={1.8} />
+              <Share2 className="text-[#0f6b3a]" size={16} strokeWidth={1.8} />
               <span>பகிர்</span>
             </button>
           )}

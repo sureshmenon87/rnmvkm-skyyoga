@@ -9,10 +9,11 @@ import {
   programDuration,
   getTamilDayWithDateFns,
 } from "../util/util";
+import { Copy, MapPin, Share2, Map, Phone, Landmark } from "lucide-react";
 
 import { sanitizeHtml } from "../lib/sanitizeHtml";
 import { getTamilDayFromISODate } from "../lib/dateUtils";
-import { Copy, Share2 } from "lucide-react";
+
 type ProgramCardProps = {
   program: Program;
 };
@@ -76,8 +77,8 @@ export default function ProgramCard({ program }: ProgramCardProps) {
                 </p>
               )}
               {program.time ? (
-                <p className="mt-2 text-sm">
-                  <span className="text-[#8B0000] font-medium">நேரம்:</span>
+                <p className="mt-2 text-sm ">
+                  <span className="font-medium text-[#0f6b3a]">நேரம்:</span>
                   <span className="text-[#1F3B5C]"> {program.time}</span>
                 </p>
               ) : (
@@ -108,53 +109,44 @@ export default function ProgramCard({ program }: ProgramCardProps) {
                         }}
                       />
                     )}
-
-                    {/* LOCATION */}
-                    {program.location?.name && (
+                    {/* Address */}
+                    <div className="flex items-start gap-2">
+                      <Landmark size={16} className="mt-0.5 text-[#0f6b3a]" />
                       <div>
-                        <div className="font-medium text-[#7A1C1C]">
-                          📍 இடம்
-                        </div>
-                        <div className="mt-1">{program.location.name}</div>
+                        <div className="font-semibold">முகவரி</div>
+                        <div>{program.location?.address}</div>
                       </div>
-                    )}
-
-                    {/* ADDRESS */}
-                    {program.location?.address && (
-                      <div>
-                        <div className="font-medium text-[#7A1C1C]">
-                          🏠 முகவரி
-                        </div>
-                        <div className="mt-1">{program.location.address}</div>
-                      </div>
-                    )}
-
-                    {/* MAP LINK */}
+                    </div>
+                    {/* MAP */}
                     {program.location?.mapUrl && (
-                      <div>
+                      <div className="flex items-center gap-2">
+                        <Map size={16} className="text-[#0f6b3a]" />
                         <a
-                          href={program.location.mapUrl}
+                          href={program.location?.mapUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-[#8b0000] underline underline-offset-2"
+                          className="text-[#0f6b3a] underline underline-offset-2"
                         >
-                          🗺️ Google Map பார்க்க
+                          Google Map பார்க்க
                         </a>
                       </div>
                     )}
-
                     {/* CONTACTS */}
                     {program.contacts && program.contacts.length > 0 && (
-                      <div>
-                        <div className="font-medium text-[#7A1C1C]">
-                          📞 தொடர்புக்கு
+                      <div className="flex flex-col gap-1 text-sm text-[#1F3B5C]">
+                        {/* Label row */}
+                        <div className="flex items-center gap-2 font-medium text-[#0f6b3a]">
+                          <Phone size={16} className="text-[#0f6b3a]" />
+                          <span>தொடர்புக்கு</span>
                         </div>
-                        <ul className="mt-1 space-y-1">
+
+                        {/* Phone numbers */}
+                        <ul className="ml-6 space-y-1">
                           {program.contacts.map((phone) => (
                             <li key={phone}>
                               <a
                                 href={`tel:${phone}`}
-                                className="text-[#1f3b5c] hover:underline"
+                                className="hover:underline"
                               >
                                 {phone}
                               </a>
@@ -162,7 +154,7 @@ export default function ProgramCard({ program }: ProgramCardProps) {
                           ))}
                         </ul>
                       </div>
-                    )}
+                    )}{" "}
                   </div>
                 )}
 

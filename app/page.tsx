@@ -108,7 +108,7 @@ export default function Home() {
         />
       </div>
       {/* Contact Cards */}
-      <section className="mt-10 mb-12 md:mb-16 px-6">
+      <section className="mt-10  px-6">
         <div
           className="
       mx-auto
