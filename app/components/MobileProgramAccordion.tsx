@@ -3,7 +3,12 @@
 import { useState } from "react";
 import { Program } from "../types/program";
 import { sanitizeHtml } from "@/app/lib/sanitizeHtml";
-import { copyProgram, programDuration, shareProgram } from "../util/util";
+import {
+  copyProgram,
+  isWebViewApp,
+  programDuration,
+  shareProgram,
+} from "../util/util";
 import { formatDateToDDMMYYYY, getTamilDayFromISODate } from "../lib/dateUtils";
 import { Copy, Share2 } from "lucide-react";
 
@@ -180,13 +185,15 @@ export default function MobileProgramAccordion({
             <span>நகலெடு</span>
           </button>
 
-          <button
-            onClick={() => shareProgram(program)}
-            className=" cursor-pointer text-[#8B1C1C] hover:underline"
-          >
-            <Share2 size={16} strokeWidth={1.8} />
-            <span>பகிர்</span>
-          </button>
+          {!isWebViewApp() && (
+            <button
+              onClick={() => shareProgram(program)}
+              className=" cursor-pointer text-[#8B1C1C] hover:underline"
+            >
+              <Share2 size={16} strokeWidth={1.8} />
+              <span>பகிர்</span>
+            </button>
+          )}
         </div>
       </div>
     </div>

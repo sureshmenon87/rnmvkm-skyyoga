@@ -89,3 +89,10 @@ export function shouldCountVisit(): boolean {
   localStorage.setItem("lastVisitDate", today);
   return true;
 }
+
+export function isWebViewApp() {
+  if (typeof navigator === "undefined") return false;
+
+  const ua = navigator.userAgent || "";
+  return /wv|Android/i.test(ua) && !navigator.share;
+}

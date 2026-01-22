@@ -101,7 +101,7 @@ export default function RootLayout({
           <NavMenu />
         </div>
 
-        <main className="flex-1">
+        <main className="flex-1 bg-gradient-to-b from-[#fffdf5] to-[#fcf8ee]">
           {" "}
           <VisitorTracker />
           {children}

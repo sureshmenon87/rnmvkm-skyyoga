@@ -62,12 +62,12 @@ export default function Home() {
   return (
     <div className="bg-[#f4edc9] ">
       {/* Maharishi & Mandram */}
-      <section className="relative h-[420px] md:h-[520px]  overflow-hidden">
+      <section className="relative h-[300px] md:h-[520px]  overflow-hidden">
         {/* Maharishi – anchored to section */}
         <img
           src="/maharishi.png"
           alt="Vethathiri Maharishi"
-          className="absolute left-1/2 -translate-x-1/2 bottom-[100px] md:bottom-[220px] 
+          className="absolute left-1/2 -translate-x-1/2 bottom-[70px] md:bottom-[220px] 
                w-64 md:w-96 z-10 animate-[divineGlow_4s_ease-in-out_infinite] filter
     drop-shadow-[0_6px_20px_rgba(0,0,0,0.18)"
         />
@@ -108,7 +108,7 @@ export default function Home() {
         />
       </div>
       {/* Contact Cards */}
-      <section className="mt-10 mb-24 px-6">
+      <section className="mt-10 mb-12 md:mb-16 px-6">
         <div
           className="
       mx-auto

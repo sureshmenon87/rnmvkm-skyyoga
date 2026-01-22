@@ -20,7 +20,7 @@ export default function ContactCard({ header, items }: ContactCardProps) {
     text-white
     rounded-2xl
     w-full
-    max-w-[280px]
+    max-w-[300px]
     md:max-w-[260px]
     min-h-[220px]
     py-6

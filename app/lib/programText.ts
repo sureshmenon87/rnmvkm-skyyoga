@@ -16,7 +16,7 @@ export function buildProgramText(program: Program): string {
 
   // Time
   if (program.time) {
-    lines.push(`நேரம்: ${program.time}`);
+    lines.push(`நேரம்: ${program.time}\n`);
   }
 
   // Instructors
@@ -31,20 +31,20 @@ export function buildProgramText(program: Program): string {
 
   // Location
   if (program.location?.name) {
-    lines.push(`\nஇடம்: ${program.location.name}`);
+    lines.push(`\nஇடம்: ${program.location.name},`);
   }
 
   if (program.location?.address) {
-    lines.push(program.location.address);
+    lines.push(`${program.location.address}\n`);
   }
 
   if (program?.location?.mapUrl) {
-    lines.push(`Google Map: ${program.location.mapUrl}`);
+    lines.push(`Google Map: ${program.location.mapUrl}\n`);
   }
 
   // Contacts
   if (program.contacts?.length) {
-    lines.push(`தொடர்பு: ${program.contacts.join(", ")}`);
+    lines.push(`தொடர்பு: ${program.contacts.join(", ")}\n`);
   }
 
   // Cancelled
