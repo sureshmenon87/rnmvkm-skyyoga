@@ -21,6 +21,7 @@ export default function MobileAccordion({ items }: { items: Item[] }) {
           <div
             key={item.id}
             className="
+              
               rounded-2xl
               bg-[#FFFDF6]
               border border-[#EDD9AF]

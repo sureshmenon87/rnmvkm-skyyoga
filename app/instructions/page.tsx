@@ -12,7 +12,7 @@ export default function InstructionsPage() {
   const activeSection = instructionSections.find((s) => s.id === activeId);
 
   return (
-    <main className="bg-[#FFFFED] py-8 md:py-10">
+    <main className="bg-gradient-to-b from-[#fffdf5] to-[#fcf8ee] py-8 md:py-10">
       {/* HEADER IMAGE */}
       <div className="flex justify-center mb-4 md:mb-6">
         <img

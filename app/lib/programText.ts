@@ -5,7 +5,7 @@ export function buildProgramText(program: Program): string {
   const lines: string[] = [];
 
   // Title (always)
-  lines.push(program.title);
+  lines.push(`${program.title}\n`);
 
   // Date
   if (program.startDate && program.endDate) {

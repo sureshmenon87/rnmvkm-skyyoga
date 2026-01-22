@@ -67,7 +67,7 @@ export default function LearnPage() {
   }));
 
   return (
-    <main className="bg-[#FFFFED] font-tamil">
+    <main className="bg-gradient-to-b from-[#fffdf5] to-[#fcf8ee] font-tamil">
       {/* Maharishi intro */}
       <MaharishiRibbonHeader />
       {/* Subtle divider */}
@@ -76,7 +76,7 @@ export default function LearnPage() {
       </div>
 
       {/* Mobile */}
-      <div className="block md:hidden mt-6">
+      <div className="block md:hidden mt-6 mb-4">
         <MobileAccordion items={accordionItems} />
       </div>
       {/* Training content */}
