@@ -14,7 +14,7 @@ export async function fetchPrograms(): Promise<Program[]> {
     const q = query(
       collection(db, "programs"),
       where("monthKey", "==", monthKey),
-      orderBy("startDate", "asc"),
+      orderBy("startDate", "desc"),
     );
 
     const snapshot = await getDocs(q);
