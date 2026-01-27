@@ -38,3 +38,9 @@ export function getCurrentMonthKey(date = new Date()) {
   const month = String(date.getMonth() + 1).padStart(2, "0");
   return `${year}-${month}`; // "2026-01"
 }
+
+// lib/dateUtils.ts
+export function getTamilMonthFromDate(dateStr: string): string {
+  const d = new Date(dateStr);
+  return TAMIL_MONTHS[d.getMonth()];
+}

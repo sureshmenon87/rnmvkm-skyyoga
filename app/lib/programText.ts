@@ -1,5 +1,6 @@
 import { Program } from "@/app/types/program";
 import { htmlToPlainText } from "../util/util";
+import { parseISO, format, isValid } from "date-fns";
 
 export function buildProgramText(program: Program): string {
   const lines: string[] = [];
@@ -8,10 +9,20 @@ export function buildProgramText(program: Program): string {
   lines.push(`${program.title}\n`);
 
   // Date
-  if (program.startDate && program.endDate) {
-    lines.push(`தேதி: ${program.startDate} முதல் ${program.endDate} வரை`);
-  } else if (program.startDate) {
-    lines.push(`தேதி: ${program.startDate}`);
+  const startDateObj = program.startDate ? parseISO(program.startDate) : null;
+  const endDateObj = program.endDate ? parseISO(program.endDate) : null;
+
+  if (
+    startDateObj &&
+    isValid(startDateObj) &&
+    endDateObj &&
+    isValid(endDateObj)
+  ) {
+    lines.push(
+      `தேதி: ${format(startDateObj, "dd-MM-yyyy")} முதல் ${format(endDateObj, "dd-MM-yyyy")} வரை`,
+    );
+  } else if (startDateObj) {
+    lines.push(`தேதி: ${format(startDateObj, "dd-MM-yyyy")}`);
   }
 
   // Time

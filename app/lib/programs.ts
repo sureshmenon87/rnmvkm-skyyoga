@@ -11,12 +11,20 @@ import { getCurrentMonthKey } from "./dateUtils";
 export async function fetchPrograms(): Promise<Program[]> {
   try {
     const monthKey = getCurrentMonthKey();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const todayStr = today.toISOString().slice(0, 10); // YYYY-MM-DD
+
+    //To fetch past programs if needed
+    //where("startDate", "<", todayStr)
+    //orderBy("startDate", "desc")
+
     const q = query(
       collection(db, "programs"),
-      where("monthKey", "==", monthKey),
-      orderBy("startDate", "desc"),
+      where("startDate", ">=", todayStr),
+      orderBy("startDate", "asc"),
     );
-
     const snapshot = await getDocs(q);
 
     const programs: Program[] = snapshot.docs.map((doc) => {
