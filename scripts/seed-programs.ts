@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 // 👇 import the month you want to seed
-import { programs_2026_01 } from "../seed-data/programs";
+import { programs_2026_02 } from "../seed-data/programs";
 
 // Load service account safely
 const serviceAccountPath = path.resolve(__dirname, "serviceAccountKey.json");
@@ -37,7 +37,7 @@ async function seedPrograms(programs: any[]) {
   console.log(`✅ Seeded ${programs.length} programs`);
 }
 
-seedPrograms(programs_2026_01)
+seedPrograms(programs_2026_02)
   .then(() => process.exit(0))
   .catch((err) => {
     console.error("❌ Seeding failed", err);

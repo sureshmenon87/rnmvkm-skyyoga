@@ -198,14 +198,19 @@ This mirrors how **real production systems** are operated.
 ```
 app/
   components/
-  data/
-    programs/
-      programs.2026-01.ts
   lib/
     firebase.ts
     programs.ts
   programs/
     page.tsx           // Server Component
+scripts
+  seed-programs.ts
+seed-data/
+  programs/
+    index.ts
+    programs.2026-01.ts
+    programs.2026-02.ts
+
 
 
 scripts/
@@ -232,6 +237,20 @@ serviceAccountKey.json (gitignored)
 
 ---
 
+Prerequisites
+
+Firebase Admin SDK credentials configured
+
+GOOGLE_APPLICATION_CREDENTIALS environment variable set to the service account JSON file
+
+How to Run the Seed Script
+
+- From the project root:
+
+```
+npx tsx scripts/seed-programs.ts
+```
+
 ## 📱 Mobile Strategy
 
 ### Phase 1 (Current)
@@ -239,32 +258,6 @@ serviceAccountKey.json (gitignored)
 - Next.js app deployed inside **Android WebView**
 - Tailwind CSS works reliably in WebView
 - Mobile-first layouts using accordion patterns
-
-### Phase 2 (Planned)
-
-- Gradual migration to **React Native**
-- Reuse:
-  - Data models
-  - Firestore structure
-  - Business logic
-
-- No architectural rework required
-
----
-
-## 🚀 Why This Project Matters
-
-This repository demonstrates:
-
-- Thoughtful frontend architecture
-- Practical Firebase usage (not tutorial-level)
-- Clean separation of responsibilities
-- Production-aware trade-offs
-- A system designed to **scale calmly**
-
-It reflects how real applications are built and maintained—not just how they are demoed.
-
----
 
 ## 📌 Status
 
