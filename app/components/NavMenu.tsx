@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const navItems = [
   { label: "முகப்பு", href: "/" },
@@ -21,7 +22,7 @@ export default function NavMenu() {
         {navItems.map((item) => {
           const active = pathname === item.href;
           return (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className={`relative transition cursor-pointer
@@ -31,7 +32,7 @@ export default function NavMenu() {
               {active && (
                 <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#7b1c0d] rounded-full" />
               )}
-            </a>
+            </Link>
           );
         })}
       </div>
@@ -50,18 +51,21 @@ export default function NavMenu() {
         {/* Hamburger */}
         <button
           onClick={() => setOpen(!open)}
+          aria-label={open ? "பிரிவுகள் மறை" : "பிரிவுகள் காட்டு"}
+          aria-expanded={open}
+          aria-controls="mobile-nav-menu"
           className="py-3 text-[#7b1c0d] font-semibold flex items-center gap-2"
         >
-          ☰ <span>பாதைகள்</span>
+          {open ? "✕" : "☰"} <span>பிரிவுகள்</span>
         </button>
 
         {/* Dropdown */}
         {open && (
-          <div className="w-full bg-[#f7f0c8] shadow-md rounded-b-xl">
+          <div id="mobile-nav-menu" className="w-full bg-[#f7f0c8] shadow-md rounded-b-xl">
             {navItems.map((item) => {
               const active = pathname === item.href;
               return (
-                <a
+                <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
@@ -73,7 +77,7 @@ export default function NavMenu() {
                     }`}
                 >
                   {item.label}
-                </a>
+                </Link>
               );
             })}
           </div>

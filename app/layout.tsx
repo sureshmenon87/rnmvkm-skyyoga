@@ -6,12 +6,35 @@ import { Phone, Mail } from "lucide-react";
 import VisitorTracker from "./components/VisitorTracker";
 import Footer from "./components/Footer";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://skyyogachennai.in";
+
 export const metadata: Metadata = {
-  title: "குரோம்பேட்டை ராதா நகர் மனவளக்கலை மன்றம் அறக்கட்டளை",
-  description: "குரோம்பேட்டை ராதா நகர் மனவளக்கலை மன்றம் அறக்கட்டளை",
+  title: {
+    default: "குரோம்பேட்டை ராதா நகர் மனவளக்கலை மன்றம் | SKY யோகா",
+    template: "%s | SKY யோக மன்றம்",
+  },
+  description:
+    "வேதாத்திரி மகரிஷி அவர்களின் குரோம்பேட்டை ராதா நகர் மனவளக்கலை மன்றம். SKY யோகா பயிற்சிகள், தியான வழிமுறைகள், நிகழ்ச்சி நிரல்கள்.",
   icons: {
-    icon: "/logo-skyyoga.png", // browser tab
-    apple: "/logo-skyyoga.png", // iOS
+    icon: "/logo-skyyoga.png",
+    apple: "/logo-skyyoga.png",
+  },
+  openGraph: {
+    title: "குரோம்பேட்டை ராதா நகர் மனவளக்கலை மன்றம் | SKY யோகா",
+    description:
+      "வேதாத்திரி மகரிஷி அவர்களின் குரோம்பேட்டை ராதா நகர் மனவளக்கலை மன்றம். SKY யோகா பயிற்சிகள், தியான வழிமுறைகள், நிகழ்ச்சி நிரல்கள்.",
+    url: siteUrl,
+    siteName: "SKY யோக மன்றம்",
+    images: [{ url: `${siteUrl}/maharishi.png`, width: 600, height: 800 }],
+    locale: "ta_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "குரோம்பேட்டை ராதா நகர் மனவளக்கலை மன்றம் | SKY யோகா",
+    description:
+      "வேதாத்திரி மகரிஷி அவர்களின் குரோம்பேட்டை ராதா நகர் மனவளக்கலை மன்றம்.",
+    images: [`${siteUrl}/maharishi.png`],
   },
 };
 
@@ -21,9 +44,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ta">
       <body className="min-h-screen flex flex-col bg-[#f4edc9] text-gray-900">
-        <header className="bg-[#f6efc8]  bg-[#f4edc9] px-4 md:px-8 shadow-[0_2px_10px_rgba(0,0,0,0.08)]">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[200] bg-white text-black px-4 py-2 rounded shadow"
+        >
+          உள்ளடக்கத்திற்கு செல்லவும்
+        </a>
+        <header className="bg-[#f4edc9] px-4 md:px-8 shadow-[0_2px_10px_rgba(0,0,0,0.08)]">
           {/* Top slogan row */}
           <div className="max-w-7xl mx-auto px-4 pt-3">
             <div className="flex justify-between text-xs md:text-sm font-semibold text-[#0f6b3a]">
@@ -101,8 +130,7 @@ export default function RootLayout({
           <NavMenu />
         </div>
 
-        <main className="flex-1 bg-gradient-to-b from-[#fffdf5] to-[#fcf8ee] border-t border-[#efe6c8]">
-          {" "}
+        <main id="main-content" className="flex-1 bg-gradient-to-b from-[#fffdf5] to-[#fcf8ee] border-t border-[#efe6c8]">
           <VisitorTracker />
           {children}
         </main>

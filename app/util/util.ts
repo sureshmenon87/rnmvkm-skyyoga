@@ -15,11 +15,15 @@ export function formatDate(date: string) {
 import { toast } from "react-hot-toast";
 import { buildProgramText } from "../lib/programText";
 
-export function copyProgram(program: Program) {
+export async function copyProgram(program: Program) {
   const text = buildProgramText(program);
 
-  navigator.clipboard.writeText(text);
-  toast.success("நிகழ்ச்சி விவரம் நகலெடுக்கப்பட்டது");
+  try {
+    await navigator.clipboard.writeText(text);
+    toast.success("நிகழ்ச்சி விவரம் நகலெடுக்கப்பட்டது");
+  } catch {
+    toast.error("நகலெடுக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்.");
+  }
 }
 export async function shareProgram(program: Program) {
   const text = buildProgramText(program);
@@ -94,5 +98,5 @@ export function isWebViewApp() {
   if (typeof navigator === "undefined") return false;
 
   const ua = navigator.userAgent || "";
-  return /wv|Android/i.test(ua) && !navigator.share;
+  return /; wv\)/i.test(ua);
 }

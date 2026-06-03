@@ -161,6 +161,13 @@ body {
   margin-top: 0.25rem;
 }
 
+/* === Keyboard focus indicator === */
+:focus-visible {
+  outline: 2px solid #0f6b3a;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 /* === Payirchigal page: remove list dots on mobile === */
 @media (max-width: 640px) {
   .payirchigal-benefits ul,

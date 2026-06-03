@@ -87,7 +87,7 @@ export default function Home() {
           அருட்தந்தை வேதாத்திரி மகரிஷி
         </p>
 
-        <p className="mt-4 text-[#7b1c0d] text-sm text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+        <p className="mt-4 text-[#7b1c0d] text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
           {blessingQuote}
         </p>
       </div>

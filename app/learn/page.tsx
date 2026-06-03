@@ -67,7 +67,7 @@ export default function LearnPage() {
   }));
 
   return (
-    <main className="bg-gradient-to-b from-[#fffdf5] to-[#fcf8ee] font-tamil">
+    <div className="bg-gradient-to-b from-[#fffdf5] to-[#fcf8ee] font-tamil">
       {/* Maharishi intro */}
       <MaharishiRibbonHeader />
       {/* Subtle divider */}
@@ -189,6 +189,6 @@ export default function LearnPage() {
           )}
         </div>
       </section>
-    </main>
+    </div>
   );
 }

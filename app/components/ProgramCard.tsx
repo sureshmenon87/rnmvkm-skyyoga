@@ -20,7 +20,6 @@ type ProgramCardProps = {
 
 export default function ProgramCard({ program }: ProgramCardProps) {
   const [expanded, setExpanded] = useState(false);
-  //const programs = program.;
 
   const isCancelled = program.cancelled === true;
   const days = programDuration(program);
