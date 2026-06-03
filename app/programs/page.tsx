@@ -5,7 +5,7 @@ import MandramDailySchedule from "../components/MandramDailySchedule";
 import { fetchPrograms } from "../lib/programs";
 import ProgramsWithMonthDivider from "../components/ProgramsWithMonthDivider";
 
-export const revalidate = 3600;
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "வரவிருக்கும் நிகழ்ச்சிகள்",
