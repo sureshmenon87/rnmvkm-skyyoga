@@ -28,7 +28,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "seed-data/programs/programs.2026-06.ts"
   ],
   "exclude": ["node_modules"]
 }

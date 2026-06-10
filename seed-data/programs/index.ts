@@ -1,1 +1,1 @@
-export { programs_2026_02 } from "./programs.2026-02";
+export { programs_2026_06 } from "./programs.2026-06";
