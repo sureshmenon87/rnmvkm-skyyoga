@@ -6,7 +6,7 @@ import { Phone, Mail } from "lucide-react";
 import VisitorTracker from "./components/VisitorTracker";
 import Footer from "./components/Footer";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://skyyogachennai.in";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rnmvkm.yoganvtech.com";
 
 export const metadata: Metadata = {
   title: {
